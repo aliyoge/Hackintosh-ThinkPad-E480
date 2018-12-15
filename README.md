@@ -7,41 +7,42 @@ Hackintosh your Thinkpad E480
 * Support 10.13.x and 10.14.
 * ACPI fixes use hotpatch; related files are located in `/CLOVER/ACPI/patched`.
 
-### CPU
+#### CPU
 * The model is `i5-8250U` , and XCPM power management is native supported. 
 
-### Wi-Fi
+#### Wi-Fi
 * The wireless model is `Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC`. Unfortunately, there's no way to enable it. 
 * Using `BCM94352Z`
 
-### USB
+#### USB
 * USB Port Patching uses [Intel FB-Patcher](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-1.254559), related file is located in `/CLOVER/kexts/Other/USBPorts.kext`.
 
-### Ethernet
+#### Ethernet
 * The model name is `RTL8168/8111/8112 Gigabit Ethernet Controller`, functioning normally.
 
-### Graphics
+#### Graphics
 * The model name is `Intel UHD Graphics 620`, faked to `Intel HD Graphics 620` by injecting ig-platform-id `00001659`.
 * The discrete graphics' name is `Radeon (TM) RX 550 ( 2 GB )`, disabled by `SSDT-DDGPU.aml` becuase macOS doesn't support Optimus technology.
 
-### Audio
+#### Audio
 * The model of the sound card is `Conexant SmartAudio HD`, which is drived by `AppleALC`; injection information is located in `/CLOVER/config.plist`. 
 * Headphones are not working right.
-### Keyboard
+
+#### Keyboard
 * functioning normally.
 
-### SSD
+#### SSD
 * functioning normally.
 
-### Touchpad
+#### Touchpad
 * functioning normally.
 
-### Bluetooth
+#### Bluetooth
 * Install [BrcmFirmwareRepo.kext](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/) into `s/l/e`
 
 ## Tips
 
-### Disable Hibernation
+#### Disable Hibernation
 
 Be aware that hibernation (suspend to disk or S4 sleep) is not supported on hackintosh.
 
@@ -66,7 +67,7 @@ sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 ```
 
-### Hibernation config
+#### Hibernation config
 
 ```
 $ pmset -g #显示当前电源状态下的设置
@@ -91,11 +92,7 @@ acwake 0 #电源状态改变时唤醒。1开启，0关闭
 lidwake 1 #开盖唤醒。1开启，0关闭
 ```
 
-
-
-
-
-### Experimental option for Skylake/Kaby Lake (and later): HWP
+#### Experimental option for Skylake/Kaby Lake (and later): HWP
 
 In Skylake CPUs, Intel introduced a new power management technology: SpeedShift (aka. SST, aka. HWP).
 
@@ -107,7 +104,7 @@ You can also enable HWP for other SMBIOS by creating a patched resources injecto
 
 Note: You still need SSDT.aml from ssdtPRgen.sh or SSDT-XCPM.aml as discussed earlier.
 
-### How to fully enable HWP
+#### How to fully enable HWP
 
 1、 config.plist/CPU/HWPEnable = Yes
 
