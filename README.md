@@ -10,6 +10,10 @@ Hackintosh your Thinkpad E480
 #### CPU
 * The model is `i5-8250U` , and XCPM power management is native supported. 
 
+#### Battery
+* The Power display is functioning normally.
+* Use [RehabMan Battery Patch](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt) to fix Dsdt.
+
 #### Wi-Fi
 * The wireless model is `Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC`. Unfortunately, there's no way to enable it. 
 * Using `BCM94352Z`
