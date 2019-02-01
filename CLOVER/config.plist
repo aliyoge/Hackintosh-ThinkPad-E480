@@ -530,6 +530,26 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>disable port limit in XHCI kext (credit PMHeart)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				g/sPD4MDBQAA
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.14 (credit DalianSky)</string>
 				<key>Disabled</key>
 				<false/>
@@ -590,13 +610,13 @@
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP142.88Z.F000.B00.1809171524</string>
+		<string>MBP141.88Z.F000.B00.1809171524</string>
 		<key>Board-ID</key>
-		<string>Mac-CAD6701F7CEA0921</string>
+		<string>Mac-B4831CEBD52A0C4C</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>BoardSerialNumber</key>
-		<string>C02744401J9HRPCUE</string>
+		<string>C02728701GUHWVPA8</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -624,11 +644,11 @@
 		<key>PlatformFeature</key>
 		<string>0x1A</string>
 		<key>ProductName</key>
-		<string>MacBookPro14,2</string>
+		<string>MacBookPro14,1</string>
 		<key>SerialNumber</key>
-		<string>C02VM009HV2N</string>
+		<string>C02V2AYFHV29</string>
 		<key>SmUUID</key>
-		<string>19D1E2FE-464D-40E0-87FD-4A275342A038</string>
+		<string>39FF2B0D-20C0-4FDE-BF7A-16B0BF1DE8CE</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
