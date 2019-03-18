@@ -1,98 +1,106 @@
-5:943  0:711  Found UEFI Acpi 2.0 RSDP at AB7FE014
-5:943  0:000  Saving ACPI tables from RSDP AB7FE014 to EFI\CLOVER\ACPI\origin ...
-5:943  0:000   AB7FE014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
-5:943  0:000    (Xsdt: AB7C1188, Rsdt: AB7C10C4)
-5:943  0:000    AB7C1188: 'XSDT', 'TP-R0P', Rev: 1, Len: 236
-5:943  0:000    AB7C10C4: 'RSDT', 'TP-R0P', Rev: 1, Len: 136
-5:943  0:000    Tables in Xsdt: 25
-5:943  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244
-5:943  0:000        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
-5:943  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613
-5:945  0:001        AB746000: 'FACS', Ver: 2, Len: 64
-5:945  0:000    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66
-5:945  0:000    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868
-5:945  0:000    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478
-5:945  0:000    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56
-5:945  0:000    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300
-5:945  0:000    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60
-5:945  0:000    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83
-5:945  0:000    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804
-5:945  0:000    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40
-5:945  0:000    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74
-5:945  0:000    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062
-5:945  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
-5:945  0:000    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608
-5:945  0:000    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52
-5:945  0:000    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
-5:945  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
-5:945  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476
-5:945  0:000    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453
-5:945  0:000    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849
-5:945  0:000    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168
-5:945  0:000    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160
-5:945  0:000    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68
-5:945  0:000    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56
-5:945  0:000    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318
-5:945  0:000    Tables in Rsdt: 25
-5:945  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244
-5:945  0:000        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
-5:945  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613
-5:947  0:001        AB746000: 'FACS', Ver: 2, Len: 64
-5:947  0:000    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66
-5:947  0:000    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868
-5:947  0:000    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478
-5:947  0:000    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56
-5:947  0:000    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300
-5:947  0:000    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60
-5:947  0:000    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83
-5:947  0:000    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804
-5:947  0:000    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40
-5:947  0:000    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74
-5:947  0:000    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062
-5:947  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
-5:947  0:000    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608
-5:947  0:000    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52
-5:947  0:000    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
-5:947  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
-5:947  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476
-5:947  0:000    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453
-5:947  0:000    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849
-5:947  0:000    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168
-5:947  0:000    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160
-5:947  0:000    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68
-5:947  0:000    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56
-5:947  0:000    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318
-5:947  0:000  Found UEFI Acpi 1.0 RSDP at AB7FE000
-5:947  0:000  Printing ACPI tables from RSDP AB7FE000 ...
-5:947  0:000   AB7FE000: 'RSD PTR ', Rev: 0 (Acpi 1.0), Len: 20
-5:947  0:000    (Rsdt: AB7C1000)
-5:947  0:000    AB7C1000: 'RSDT', 'TP-R0P', Rev: 1, Len: 136
-5:947  0:000    Tables in Rsdt: 25
-5:947  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244
-5:947  0:000        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
-5:947  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613
-5:948  0:001        AB746000: 'FACS', Ver: 2, Len: 64
-5:948  0:000    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66
-5:948  0:000    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868
-5:948  0:000    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478
-5:948  0:000    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56
-5:948  0:000    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300
-5:948  0:000    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60
-5:948  0:000    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83
-5:948  0:000    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804
-5:948  0:000    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40
-5:948  0:000    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74
-5:948  0:000    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062
-5:948  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
-5:948  0:000    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608
-5:948  0:000    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52
-5:948  0:000    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
-5:948  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
-5:948  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476
-5:948  0:000    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453
-5:948  0:000    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849
-5:948  0:000    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168
-5:948  0:000    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160
-5:948  0:000    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68
-5:948  0:000    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56
-5:948  0:000    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318
+77:927  6:574  Found UEFI Acpi 2.0 RSDP at AB7FE014
+77:927  0:000  Saving ACPI tables from RSDP AB7FE014 to EFI\CLOVER\ACPI\origin ...
+77:927  0:000   AB7FE014: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+77:936  0:009    (Xsdt: AB7C1188, Rsdt: AB7C10C4)
+77:936  0:000    AB7C1188: 'XSDT', 'TP-R0P', Rev: 1, Len: 236 -> XSDT.aml
+77:946  0:009    AB7C10C4: 'RSDT', 'TP-R0P', Rev: 1, Len: 136 -> RSDT.aml
+77:956  0:009    Tables in Xsdt: 25
+77:956  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244 -> FACP.aml
+77:966  0:010        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
+77:966  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613 -> DSDT.aml
+77:978  0:011        AB746000: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+77:989  0:010    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66 -> UEFI.aml
+77:999  0:010    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868 -> SSDT-0-SaSsdt.aml
+78:009  0:010    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478 -> SSDT-1-PerfTune.aml
+78:019  0:010    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56 -> HPET.aml
+78:029  0:009    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300 -> APIC.aml
+78:039  0:010    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60 -> MCFG.aml
+78:049  0:009    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83 -> ECDT.aml
+78:059  0:009    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804 -> SSDT-2-ProjSsdt.aml
+78:070  0:010    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40 -> BOOT.aml
+78:080  0:009    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74 -> BATB.aml
+78:090  0:010    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062 -> SSDT-3-CpuSsdt.aml (Found hidden SSDT 7 pcs)
+78:100  0:009        * AB723098: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1549  53 53 44 54 0D 06 00 00 02 32 50 6D 52 65 66 00 Internal length = 1549 -> SSDT-x3_0-Cpu0Ist.aml
+78:110  0:010        * AB6BA018: 'SSDT', 'ApIst', Rev: 2, Len: 3348  53 53 44 54 14 0D 00 00 02 2A 50 6D 52 65 66 00 Internal length = 3348 -> SSDT-x3_1-ApIst.aml
+78:120  0:010        * AB6B9018: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 1023  53 53 44 54 FF 03 00 00 02 11 50 6D 52 65 66 00 Internal length = 1023 -> SSDT-x3_2-Cpu0Cst.aml
+78:131  0:010        * AB723718: 'SSDT', 'ApCst', Rev: 2, Len: 778  53 53 44 54 0A 03 00 00 02 93 50 6D 52 65 66 00 Internal length = 778 -> SSDT-x3_3-ApCst.aml
+78:141  0:010        * A5A55E98: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 186  53 53 44 54 BA 00 00 00 02 7D 50 6D 52 65 66 00 Internal length = 186 -> SSDT-x3_4-Cpu0Hwp.aml
+78:151  0:010        * A5A57418: 'SSDT', 'ApHwp', Rev: 2, Len: 791  53 53 44 54 17 03 00 00 02 80 50 6D 52 65 66 00 Internal length = 791 -> SSDT-x3_5-ApHwp.aml
+78:162  0:010        * A5A50018: 'SSDT', 'HwpLvt', Rev: 2, Len: 1576  53 53 44 54 28 06 00 00 02 85 50 6D 52 65 66 00 Internal length = 1576 -> SSDT-x3_6-HwpLvt.aml
+78:172  0:010  
+78:172  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389 -> SSDT-4-CtdpB.aml
+78:182  0:010    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608 -> SSDT-5-UsbCTabl.aml
+78:192  0:009    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52 -> DBGP.aml
+78:202  0:009    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
+78:202  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
+78:202  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476 -> SSDT-6-AmdTabl.aml
+78:212  0:010    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453 -> SSDT-7-SgPch.aml
+78:223  0:010    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849 -> SSDT-8-SgUlx.aml
+78:233  0:010    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168 -> DMAR.aml
+78:243  0:010    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160 -> ASF!.aml
+78:254  0:010    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68 -> FPDT.aml
+78:264  0:010    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56 -> BGRT.aml
+78:275  0:010    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318 -> UEFI.aml
+78:285  0:010    Tables in Rsdt: 25
+78:285  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244 -> RSDT-FACP.aml
+78:292  0:006        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
+78:292  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613
+78:293  0:001        AB746000: 'FACS', Ver: 2, Len: 64
+78:293  0:000    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66
+78:293  0:000    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868
+78:293  0:000    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478
+78:293  0:000    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56
+78:293  0:000    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300
+78:293  0:000    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60
+78:293  0:000    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83
+78:293  0:000    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804
+78:293  0:000    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40
+78:293  0:000    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74
+78:293  0:000    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062
+78:293  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+78:293  0:000    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608
+78:293  0:000    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52
+78:293  0:000    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
+78:293  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
+78:293  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476
+78:293  0:000    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453
+78:293  0:000    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849
+78:293  0:000    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168
+78:293  0:000    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160
+78:293  0:000    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68
+78:293  0:000    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56
+78:293  0:000    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318
+78:293  0:000  Found UEFI Acpi 1.0 RSDP at AB7FE000
+78:293  0:000  Printing ACPI tables from RSDP AB7FE000 ...
+78:293  0:000   AB7FE000: 'RSD PTR ', Rev: 0 (Acpi 1.0), Len: 20
+78:294  0:000    (Rsdt: AB7C1000)
+78:294  0:000    AB7C1000: 'RSDT', 'TP-R0P', Rev: 1, Len: 136
+78:294  0:000    Tables in Rsdt: 25
+78:294  0:000    0. AB7F7000: 'FACP', 'TP-R0P', Rev: 5, Len: 244
+78:294  0:000        (Dsdt: AB7D1000, Facs: AB746000, XDsdt: AB7D1000, XFacs: 0)
+78:294  0:000        AB7D1000: 'DSDT', 'SKL', Rev: 2, Len: 137613
+78:295  0:001        AB746000: 'FACS', Ver: 2, Len: 64
+78:295  0:000    1. AB75C000: 'UEFI', 'TP-R0P', Rev: 1, Len: 66
+78:295  0:000    2. AB7F9000: 'SSDT', 'SaSsdt', Rev: 2, Len: 12868
+78:295  0:000    3. AB7F8000: 'SSDT', 'PerfTune', Rev: 2, Len: 1478
+78:295  0:000    4. AB7F6000: 'HPET', 'TP-R0P', Rev: 1, Len: 56
+78:295  0:000    5. AB7F5000: 'APIC', 'TP-R0P', Rev: 3, Len: 300
+78:295  0:000    6. AB7F4000: 'MCFG', 'TP-R0P', Rev: 1, Len: 60
+78:295  0:000    7. AB7F3000: 'ECDT', 'TP-R0P', Rev: 1, Len: 83
+78:295  0:000    8. AB7CF000: 'SSDT', 'ProjSsdt', Rev: 2, Len: 5804
+78:295  0:000    9. AB7CE000: 'BOOT', 'TP-R0P', Rev: 1, Len: 40
+78:295  0:000    10. AB7CD000: 'BATB', 'TP-R0P', Rev: 2, Len: 74
+78:295  0:000    11. AB7CB000: 'SSDT', 'CpuSsdt', Rev: 2, Len: 6062
+78:295  0:000    12. AB7CA000: 'SSDT', 'CtdpB', Rev: 2, Len: 1389
+78:295  0:000    13. AB7C9000: 'SSDT', 'UsbCTabl', Rev: 2, Len: 1608
+78:295  0:000    14. AB7C8000: 'DBGP', 'TP-R0P', Rev: 1, Len: 52
+78:295  0:000    15. AB7C7000: 'DBG2', 'TP-R0P', Rev: 0, Len: 84
+78:295  0:000    16. AB7C6000: 'MSDM', 'TP-R0P', Rev: 3, Len: 85
+78:295  0:000    17. AB7C5000: 'SSDT', 'AmdTabl', Rev: 1, Len: 1476
+78:295  0:000    18. AB7C4000: 'SSDT', 'SgPch', Rev: 2, Len: 1453
+78:295  0:000    19. AB7C3000: 'SSDT', 'SgUlx', Rev: 2, Len: 849
+78:295  0:000    20. AB7C2000: 'DMAR', 'TP-R0P', Rev: 1, Len: 168
+78:295  0:000    21. AB7FD000: 'ASF!', 'TP-R0P', Rev: 32, Len: 160
+78:295  0:000    22. AB7C0000: 'FPDT', 'TP-R0P', Rev: 1, Len: 68
+78:295  0:000    23. AB7BF000: 'BGRT', 'TP-R0P', Rev: 1, Len: 56
+78:295  0:000    24. AB732000: 'UEFI', 'TP-R0P', Rev: 1, Len: 318
