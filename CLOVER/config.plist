@@ -14,6 +14,8 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>AddPNLF</key>
+				<true/>
 				<key>FixIPIC</key>
 				<false/>
 				<key>FixLAN</key>
@@ -321,11 +323,15 @@
 				<true/>
 			</dict>
 		</dict>
+		<key>SortedOrder</key>
+		<array>
+			<string>SSDT-pr.aml</string>
+		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=1 nv_disable=1 kext-dev-mode=1 -disablegfxfirmware</string>
+		<string>dart=0 nv_disable=1 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -359,8 +365,6 @@
 			<key>ResetHDA</key>
 			<true/>
 		</dict>
-		<key>LANInjection</key>
-		<false/>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
@@ -477,6 +481,8 @@
 	<dict>
 		<key>AppleIntelCPUPM</key>
 		<false/>
+		<key>AppleRTC</key>
+		<true/>
 		<key>Debug</key>
 		<false/>
 		<key>DellSMBIOSPatch</key>
@@ -488,9 +494,9 @@
 		<key>KernelCpu</key>
 		<false/>
 		<key>KernelLapic</key>
-		<false/>
+		<true/>
 		<key>KernelPm</key>
-		<false/>
+		<true/>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>

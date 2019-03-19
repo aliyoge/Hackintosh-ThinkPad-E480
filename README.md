@@ -140,6 +140,33 @@ Note: You still need SSDT.aml from ssdtPRgen.sh or SSDT-XCPM.aml as discussed ea
 
 4、 config `X86PlatformPluginInjector` (optional)
 
+#### The function of kexts
 
+```
+1, ACPIBatteryManager.kext 
+电源管理，配合dsdt使用。
+2, BrcmFirmwareData.kext和BrcmPatchRAM2.kext和AirportBrcmFixup.kext
+Broadcom BCM94352Z 无线网卡和蓝牙驱动，/Library/Extensions也需有一份。
+3, AppleALC.kext
+声卡驱动。
+4, AppleIGB.kext和RealtekRTL8111.kext
+有线网卡驱动。
+5, CPUFriend.kext和CPUFriendDataProvider.kext
+动态修改X86PlatformPlugin，注入电源管理数据。
+6, FakeSMC.kext和Fake_*.kext
+FakeSMC.kext用来欺骗OSX系统要安装的PC是SMC硬件。
+7, GenericUSBXHCI.kext
+USB3.0驱动，可以删除，在10.11就没用了。
+8, HibernationFixup.kext
+修复睡眠唤醒问题，也可以不用。
+9, Lilu.kext
+核心依赖。
+10, USBPorts.kext
+USB驱动。
+11, VoodooPS2Controller.kext
+触摸板驱动。
+12, WhateverGreen.kext
+核心依赖
+```
 
 
