@@ -325,7 +325,11 @@
 		</dict>
 		<key>SortedOrder</key>
 		<array>
+			<string>SSDT-PTSWAK.aml</string>
 			<string>SSDT-pr.aml</string>
+			<string>SSDT-DDGPU.aml</string>
+			<string>SSDT-RMCF.aml</string>
+			<string>SSDT-XCPM.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
