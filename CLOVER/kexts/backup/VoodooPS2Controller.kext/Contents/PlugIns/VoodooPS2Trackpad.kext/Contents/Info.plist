@@ -275,7 +275,7 @@
 						<key>TrackpadSecondaryClickCorners</key>
 						<true/>
 						<key>TrackpadThreeFingerDrag</key>
-						<false/>
+						<true/>
 					</dict>
 					<key>DisableDevice</key>
 					<false/>
@@ -380,7 +380,7 @@
 					<key>ScrollResolution</key>
 					<integer>400</integer>
 					<key>SkipPassThrough</key>
-					<false/>
+					<true/>
 					<key>SmoothInput</key>
 					<true/>
 					<key>StickyHorizontalScrolling</key>
@@ -520,9 +520,9 @@
 					<key>Thinkpad_TrackPad</key>
 					<dict>
 						<key>BogusDeltaThreshX</key>
-						<integer>800</integer>
+						<integer>600</integer>
 						<key>BogusDeltaThreshY</key>
-						<integer>800</integer>
+						<integer>600</integer>
 						<key>Clicking</key>
 						<true/>
 						<key>DivisorX</key>
@@ -548,9 +548,9 @@
 						<key>MouseMultiplierY</key>
 						<integer>8</integer>
 						<key>MouseScrollMultiplierX</key>
-						<integer>2</integer>
+						<integer>1</integer>
 						<key>MouseScrollMultiplierY</key>
-						<integer>2</integer>
+						<integer>1</integer>
 						<key>MultiFingerHorizontalDivisor</key>
 						<integer>4</integer>
 						<key>MultiFingerVerticalDivisor</key>

@@ -331,7 +331,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1 -disablegfxfirmware</string>
+		<string>dart=0 -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -415,8 +415,6 @@
 			<true/>
 			<key>HighCurrent</key>
 			<false/>
-			<key>Inject</key>
-			<false/>
 		</dict>
 		<key>UseIntelHDMI</key>
 		<false/>
@@ -461,14 +459,14 @@
 		<key>EDID</key>
 		<dict>
 			<key>Inject</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
