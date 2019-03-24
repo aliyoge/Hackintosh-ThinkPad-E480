@@ -4,86 +4,75 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
-		<key>#DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>MCFG</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Cst</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>ApCst</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>ApIst</string>
-			</dict>
-		</array>
 		<key>AutoMerge</key>
 		<true/>
-		<key>Comment-DisabledAML</key>
-		<string>Disable other forms of CPU PM due to SSDT/Generate/PluginType=true</string>
 		<key>DSDT</key>
 		<dict>
+			<key>Debug</key>
+			<false/>
 			<key>DropOEM_DSM</key>
 			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
 				<true/>
+				<key>FixIPIC</key>
+				<false/>
+				<key>FixLAN</key>
+				<false/>
+				<key>FixRTC</key>
+				<false/>
+				<key>FixRegions</key>
+				<false/>
+				<key>FixSATA</key>
+				<false/>
+				<key>FixShutdown</key>
+				<false/>
+				<key>FixUSB</key>
+				<false/>
 			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change APSS to APXX</string>
+					<string>change EHC1 to EH01</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					QVBTUw==
+					RUhDMQ==
 					</data>
 					<key>Replace</key>
 					<data>
-					QVBYWA==
+					RUgwMQ==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _DSM to XDSM</string>
+					<string>change EHC2 to EH02</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
-					X0RTTQ==
+					RUhDMg==
 					</data>
 					<key>Replace</key>
 					<data>
-					WERTTQ==
+					RUgwMg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change XHCI to XHC</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					WEhDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WEhDXw==
 					</data>
 				</dict>
 				<dict>
@@ -102,7 +91,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _OSI to XOSI, pair with SSDT-XOSI.aml</string>
+					<string>change _OSI to XOSI</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					X09TSQ==
@@ -110,6 +101,20 @@
 					<key>Replace</key>
 					<data>
 					WE9TSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _DSM to XDSM</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X0RTTQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WERTTQ==
 					</data>
 				</dict>
 				<dict>
@@ -156,119 +161,23 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC1 to EH01, optionally pair with SSDT-EH01.aml</string>
+					<string>change HDAS to HDEF</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					RUhDMQ==
+					SERBUw==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUgwMQ==
+					SERFRg==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC2 to EH02, optionally pair with SSDT-EH02.aml</string>
+					<string>change HECI to IMEI</string>
 					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RUhDMg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EUSB to EH01, optionally pair with SSDT-EH01.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVVTQg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change USBE to EH02, optionally pair with SSDT-EH02.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					VVNCRQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change GFX0 to IGPU, optionally pair with SSDT-IGPU.aml</string>
-					<key>Find</key>
-					<data>
-					R0ZYMA==
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #1 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					UENJMFZJRF8=
-					</data>
-					<key>Replace</key>
-					<data>
-					UENJMElHUFU=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #2 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					VklEXwhfQURSDAAAAgA=
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQhfQURSDAAAAgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change B0D3 to HDAU, optionally pair with SSDT-HDAU.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					QjBEMw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SERBVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change HECI to IMEI, optionally pair with SSDT-IMEI.aml</string>
-					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					SEVDSQ==
@@ -280,35 +189,65 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change SAT0 to SATA, optionally pair with SSDT-SATA.aml</string>
+					<string>change MEI to IMEI</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
-					U0FUMA==
+					TUVJXw==
 					</data>
 					<key>Replace</key>
 					<data>
-					U0FUQQ==
+					SU1FSQ==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change LPC to LPCB, optionally pair with SSDT-DEHCI.aml, SSDT-DEH01.aml, SSDT-DEH02.aml, SSDT-LPC.aml</string>
+					<string>change GFX0 to IGPU</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					TFBDXw==
+					R0ZYMA==
 					</data>
 					<key>Replace</key>
 					<data>
-					TFBDQg==
+					SUdQVQ==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
+					<string>change PCI0.VID to IGPU #1 (Thinkpad)</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
+					<key>Find</key>
+					<data>
+					UENJMFZJRF8=
+					</data>
+					<key>Replace</key>
+					<data>
+					UENJMElHUFU=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change PCI0.VID to IGPU #2 (Thinkpad)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					VklEXwhfQURSDAAAAgA=
+					</data>
+					<key>Replace</key>
+					<data>
+					SUdQVQhfQURSDAAAAgA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_PTS,1,N) to ZPTS</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					X1BUUwE=
@@ -320,35 +259,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
+					<string>change Method(_WAK,1,S) to ZWAK</string>
 					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X1BUUwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WlBUUwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X1dBSwE=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwE=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
+					<false/>
 					<key>Find</key>
 					<data>
 					X1dBSwk=
@@ -360,93 +273,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(XWAK,0,N) to ZWAK, pair with SSDT-XWAK.aml</string>
+					<string>change Method(GPRW,2,N) to XPRW</string>
 					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFdBSwA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,S) to ZWAK, pair with SSDT-XWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFdBSwg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,N) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,S) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,N) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,S) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
-					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					R1BSVwI=
@@ -458,62 +287,34 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(UPRW,2,N) to XPRW, pair with SSDT-UPRW.aml</string>
+					<string>change LGPA to XGPA</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					VVBSVwpwEg==
+					TEdQQQk=
 					</data>
 					<key>Replace</key>
 					<data>
-					WFBSVwpwEg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change LANC Method(_PRW,0,S) to Method(XPRW,0,..), pair with SSDT-LANCPRW.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					AAAZABQfX1BSVwg=
-					</data>
-					<key>Replace</key>
-					<data>
-					AAAZABQfWFBSVwg=
+					WEdQQQk=
 					</data>
 				</dict>
 			</array>
+			<key>ReuseFFFF</key>
+			<false/>
 		</dict>
-		<key>DisabledAML</key>
-		<array>
-			<string>SSDT-DDA.aml</string>
-			<string>SSDT.aml</string>
-			<string>SSDT-XCPM.aml</string>
-			<string>SSDT-PluginType1.aml</string>
-		</array>
-		<key>DropTables</key>
-		<array>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>#MCFG</string>
-			</dict>
-		</array>
 		<key>FixHeaders</key>
 		<true/>
+		<key>FixMCFG</key>
+		<false/>
+		<key>PatchAPIC</key>
+		<false/>
 		<key>SSDT</key>
 		<dict>
+			<key>DropOem</key>
+			<false/>
 			<key>Generate</key>
 			<dict>
-				<key>APLF</key>
-				<false/>
-				<key>APSN</key>
-				<false/>
 				<key>CStates</key>
 				<false/>
 				<key>PStates</key>
@@ -521,18 +322,14 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
-			<key>NoOemTableId</key>
-			<false/>
 		</dict>
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT-PTSWAK.aml</string>
 			<string>SSDT-pr.aml</string>
 			<string>SSDT-DDGPU.aml</string>
-			<string>SSDT-IGPU.aml</string>
-			<string>SSDT-IMEI.aml</string>
-			<string>SSDT-SATA.aml</string>
-			<string>SSDT-XOSI.aml</string>
+			<string>SSDT-RMCF.aml</string>
+			<string>SSDT-XCPM.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
