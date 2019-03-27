@@ -77,6 +77,8 @@
 				<dict>
 					<key>Comment</key>
 					<string>change _DSM to XDSM</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					X0RTTQ==
@@ -103,6 +105,8 @@
 				<dict>
 					<key>Comment</key>
 					<string>change _OSI to XOSI, pair with SSDT-XOSI.aml</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					X09TSQ==
@@ -156,63 +160,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC1 to EH01, optionally pair with SSDT-EH01.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RUhDMQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EHC2 to EH02, optionally pair with SSDT-EH02.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RUhDMg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change EUSB to EH01, optionally pair with SSDT-EH01.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVVTQg==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change USBE to EH02, optionally pair with SSDT-EH02.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					VVNCRQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change GFX0 to IGPU, optionally pair with SSDT-IGPU.aml</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					R0ZYMA==
@@ -268,7 +218,7 @@
 					<key>Comment</key>
 					<string>change HECI to IMEI, optionally pair with SSDT-IMEI.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					SEVDSQ==
@@ -281,6 +231,8 @@
 				<dict>
 					<key>Comment</key>
 					<string>change SAT0 to SATA, optionally pair with SSDT-SATA.aml</string>
+					<key>Disabled</key>
+					<false/>
 					<key>Find</key>
 					<data>
 					U0FUMA==
@@ -308,7 +260,7 @@
 					<key>Comment</key>
 					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					X1BUUwE=
@@ -320,133 +272,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X1BUUwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WlBUUwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					X1dBSwE=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwE=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Find</key>
-					<data>
-					X1dBSwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,N) to ZWAK, pair with SSDT-XWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFdBSwA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,S) to ZWAK, pair with SSDT-XWAK.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFdBSwg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,N) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XSEL,0,S) to XSEZ, pair with SSDT-XSEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					WFNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,N) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAA=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(ESEL,0,S) to ESEZ, pair with SSDT-ESEL.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					RVNFTAg=
-					</data>
-					<key>Replace</key>
-					<data>
-					RVNFWgg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
 					R1BSVwI=
@@ -533,12 +361,13 @@
 			<string>SSDT-IMEI.aml</string>
 			<string>SSDT-SATA.aml</string>
 			<string>SSDT-XOSI.aml</string>
+			<string>SSDT-GPRW.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 -disablegfxfirmware</string>
+		<string>-disablegfxfirmware dart=0</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -673,14 +502,10 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<true/>
+			<false/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
-		<key>NvidiaSingle</key>
-		<false/>
-		<key>ig-platform-id</key>
-		<string>0x59160009</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -763,7 +588,7 @@
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.14 (credit DalianSky)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				dkZI/wX8awg=

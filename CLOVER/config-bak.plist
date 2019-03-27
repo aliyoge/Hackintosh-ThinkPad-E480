@@ -4,75 +4,88 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
+		<key>#DropTables</key>
+		<array>
+			<dict>
+				<key>Signature</key>
+				<string>DMAR</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>MCFG</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Cst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApCst</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>ApIst</string>
+			</dict>
+		</array>
 		<key>AutoMerge</key>
 		<true/>
+		<key>Comment-DisabledAML</key>
+		<string>Disable other forms of CPU PM due to SSDT/Generate/PluginType=true</string>
 		<key>DSDT</key>
 		<dict>
-			<key>Debug</key>
-			<false/>
 			<key>DropOEM_DSM</key>
 			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>AddPNLF</key>
 				<true/>
-				<key>FixIPIC</key>
-				<false/>
-				<key>FixLAN</key>
-				<false/>
-				<key>FixRTC</key>
-				<false/>
-				<key>FixRegions</key>
-				<false/>
-				<key>FixSATA</key>
-				<false/>
-				<key>FixShutdown</key>
-				<false/>
-				<key>FixUSB</key>
-				<false/>
 			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC1 to EH01</string>
+					<string>change APSS to APXX</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
-					RUhDMQ==
+					QVBTUw==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUgwMQ==
+					QVBYWA==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change EHC2 to EH02</string>
+					<string>change _DSM to XDSM</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					RUhDMg==
+					X0RTTQ==
 					</data>
 					<key>Replace</key>
 					<data>
-					RUgwMg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change XHCI to XHC</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WEhDSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					WEhDXw==
+					WERTTQ==
 					</data>
 				</dict>
 				<dict>
@@ -91,7 +104,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _OSI to XOSI</string>
+					<string>change _OSI to XOSI, pair with SSDT-XOSI.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -101,20 +114,6 @@
 					<key>Replace</key>
 					<data>
 					WE9TSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _DSM to XDSM</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X0RTTQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					WERTTQ==
 					</data>
 				</dict>
 				<dict>
@@ -161,49 +160,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					SERBUw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SERFRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change HECI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					SEVDSQ==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change MEI to IMEI</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					TUVJXw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SU1FSQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
+					<string>change GFX0 to IGPU, optionally pair with SSDT-IGPU.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -217,9 +174,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #1 (Thinkpad)</string>
+					<string>change PCI0.VID to IGPU #1 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					UENJMFZJRF8=
@@ -231,9 +188,9 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change PCI0.VID to IGPU #2 (Thinkpad)</string>
+					<string>change PCI0.VID to IGPU #2 (Thinkpad), optionally pair with SSDT-IGPU.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					VklEXwhfQURSDAAAAgA=
@@ -245,7 +202,63 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,N) to ZPTS</string>
+					<string>change B0D3 to HDAU, optionally pair with SSDT-HDAU.aml</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					QjBEMw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SERBVQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HECI to IMEI, optionally pair with SSDT-IMEI.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SEVDSQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					SU1FSQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change SAT0 to SATA, optionally pair with SSDT-SATA.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U0FUMA==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0FUQQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change LPC to LPCB, optionally pair with SSDT-DEHCI.aml, SSDT-DEH01.aml, SSDT-DEH02.aml, SSDT-LPC.aml</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					TFBDXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					TFBDQg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -259,21 +272,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_WAK,1,S) to ZWAK</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1dBSwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW</string>
+					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -287,34 +286,62 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change LGPA to XGPA</string>
+					<string>change Method(UPRW,2,N) to XPRW, pair with SSDT-UPRW.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
-					TEdQQQk=
+					VVBSVwpwEg==
 					</data>
 					<key>Replace</key>
 					<data>
-					WEdQQQk=
+					WFBSVwpwEg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change LANC Method(_PRW,0,S) to Method(XPRW,0,..), pair with SSDT-LANCPRW.aml</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					AAAZABQfX1BSVwg=
+					</data>
+					<key>Replace</key>
+					<data>
+					AAAZABQfWFBSVwg=
 					</data>
 				</dict>
 			</array>
-			<key>ReuseFFFF</key>
-			<false/>
 		</dict>
+		<key>DisabledAML</key>
+		<array>
+			<string>SSDT-DDA.aml</string>
+			<string>SSDT.aml</string>
+			<string>SSDT-XCPM.aml</string>
+			<string>SSDT-PluginType1.aml</string>
+		</array>
+		<key>DropTables</key>
+		<array>
+			<dict>
+				<key>Signature</key>
+				<string>DMAR</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>#MCFG</string>
+			</dict>
+		</array>
 		<key>FixHeaders</key>
 		<true/>
-		<key>FixMCFG</key>
-		<false/>
-		<key>PatchAPIC</key>
-		<false/>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
 			<dict>
+				<key>APLF</key>
+				<false/>
+				<key>APSN</key>
+				<false/>
 				<key>CStates</key>
 				<false/>
 				<key>PStates</key>
@@ -322,14 +349,19 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
+			<key>NoOemTableId</key>
+			<false/>
 		</dict>
 		<key>SortedOrder</key>
 		<array>
 			<string>SSDT-PTSWAK.aml</string>
 			<string>SSDT-pr.aml</string>
 			<string>SSDT-DDGPU.aml</string>
-			<string>SSDT-RMCF.aml</string>
-			<string>SSDT-XCPM.aml</string>
+			<string>SSDT-IGPU.aml</string>
+			<string>SSDT-IMEI.aml</string>
+			<string>SSDT-SATA.aml</string>
+			<string>SSDT-XOSI.aml</string>
+			<string>SSDT-GPRW.aml</string>
 		</array>
 	</dict>
 	<key>Boot</key>
@@ -560,7 +592,7 @@
 				<key>Comment</key>
 				<string>Disable minStolenSize less or equal fStolenMemorySize assertion, 10.14 (credit DalianSky)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				dkZI/wX8awg=
