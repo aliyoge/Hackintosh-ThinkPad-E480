@@ -1,172 +1,79 @@
-# Thinkpad E480 for macOS Mojave & High Sierra
+# Thinkpad E480 for macOS Catalina
 
 Hackintosh your Thinkpad E480
 
-## Features
+让你的Thinkpad E480装上黑苹果
 
-* Support 10.13.x and 10.14.
-* ACPI fixes use hotpatch; related files are located in `/CLOVER/ACPI/patched`.
+## 电脑配置
 
-#### CPU
-* The model is `i5-8250U` , and XCPM power management is native supported. 
+| 规格     | 详细信息                              |
+| -------- | ------------------------------------|
+| 电脑型号 | 联想ThinkPad 翼480（0UCD）             |
+| 处理器   | 英特尔 酷睿 i5-8250U 处理器             |
+| 内存     | 16GB 金士顿 DDR4 2400MHz            |
+| 硬盘     | 东芝(TOSHIBA) 240GB                  |
+| 集成显卡 | 英特尔 UHD 图形620                     |
+| 声卡     | Conexant CX20753/4 (节点:14)          |
+| 网卡     | BCM94352Z                            |
 
-#### Battery
-* The Power display is functioning normally.
-* Use [RehabMan Battery Patch](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt) to fix Dsdt.
+## 目前情况
 
-#### Wi-Fi
-* The wireless model is `Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC`. Unfortunately, there's no way to enable it. 
-* Using `BCM94352Z`
+* 目前支持最新版本10.15.3。
+* 与时俱进，采用OC引导。
+* Cpu驱动加载正常，变频正常。
+* 电量显示正常。
+* 睡眠唤醒正常。
+* 更换BCM94352Z网卡，蓝牙和无线正常(自带Realtek 8821CE无解)。
+* 有线网卡正常。
+* 集成显卡驱动正常，4k正常，屏蔽独立显卡。
+* 声卡注入id14，正常工作。
+* USB端口正常。
 
-#### USB
-* USB Port Patching uses [Intel FB-Patcher](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-1.254559), related file is located in `/CLOVER/kexts/Other/USBPorts.kext`.
+## 一些说明
 
-#### Ethernet
-* The model name is `RTL8168/8111/8112 Gigabit Ethernet Controller`, functioning normally.
+#### 关于安装
 
-#### Graphics
-* The model name is `Intel UHD Graphics 620`, faked to `Intel HD Graphics 620` by injecting ig-platform-id `00001659`.
-* The discrete graphics' name is `Radeon (TM) RX 550 ( 2 GB )`, disabled by `SSDT-DDGPU.aml` becuase macOS doesn't support Optimus technology.
+安装系统请勿使用本EFI，请先到[远景论坛](http://bbs.pcbeta.com/forum-561-1.html)、[黑果小兵](https://blog.daliansky.net/)等站点查看教程，采用通用配置安装成功之后再参考我的`EFI`根据你自己的配置替换。
 
-#### Audio
-* The model of the sound card is `Conexant SmartAudio HD`, which is drived by `AppleALC`; injection information is located in `/CLOVER/config.plist`. 
-* Headphones are not working right.
+#### 关于DSDT
 
-#### Keyboard
-* functioning normally.
+最好不要直接使用我的`DSDT`文件，请导出你自己的`DSDT`，然后打上一下补丁:
 
-#### SSD
-* functioning normally.
+* [电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)
+* [关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)
+* [睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)
 
-#### Touchpad
-* functioning normally.
+#### 已知问题
 
-#### Bluetooth
-* Install [BrcmFirmwareRepo.kext](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/) into `s/l/e`
+* 在睡眠唤醒之后可能会存在插拔电源后电量不更新问题，临时解决办法是再手动将系统睡眠一下，唤醒后会恢复正常，此问题正在想办法解决，有知道怎么解决这个问题的朋友麻烦告知一下。
 
-## Tips
-
-#### Disable Hibernation
-
-Be aware that hibernation (suspend to disk or S4 sleep) is not supported on hackintosh.
-
-You should disable it:
-
-Code:
-
-```bash
-sudo pmset -a hibernatemode 0
-sudo rm /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
-```
-
-Always check your hibernatemode after updates and disable it. System updates tend to re-enable it, although the trick above (making sleepimage a directory) tends to help.
-
-And it may be a good idea to disable the other hibernation related options:
-
-Code:
-
-```bash
-sudo pmset -a standby 0
-sudo pmset -a autopoweroff 0
-```
-
-#### Hibernation config
+#### 各种驱动作用
 
 ```
-$ pmset -g #显示当前电源状态下的设置
-$ pmset -g custom #显示所有电源状态下的设置
-
-standbydelay 10800 #standby启动的时间。单位秒
-standby 1 #处于睡眠状态经过设定时间后，记忆体数据写入硬碟，关闭记忆体供电。1开启，0关闭
-womp 1 #网路唤醒。1开启，0关闭
-halfdim 1 #显示器亮度调低时间。单位分钟
-hibernatefile /var/vm/sleepimage #睡眠档案位置
-powernap 1 #PowerNAP是否开启。1开启，0关闭
-gpuswitch 2 #GPU是否自动切换。1开启，0关闭，2不支持
-networkoversleep 0 #睡眠时提供共享网路服务
-disksleep 10 #机械硬碟停转时间。单位分钟，0关闭
-sleep 0 #系统睡眠的时间。单位分钟，0关闭
-autopoweroffdelay 28800 #autopoweroff启动的时间，单位为秒
-hibernatemode 3 #睡眠方式设置
-autopoweroff 1 #处于睡眠状态经过设定时间后，记忆体写入硬碟，关闭记忆体电源。1开启，0关闭
-ttyskeepawake 1 #远程用户活动时防止睡眠。1开启，0关闭
-displaysleep 10 #显示器关闭时间。单位分钟，0关闭
-acwake 0 #电源状态改变时唤醒。1开启，0关闭
-lidwake 1 #开盖唤醒。1开启，0关闭
-```
-
-#### Experimental option for Skylake/Kaby Lake (and later): HWP
-
-In Skylake CPUs, Intel introduced a new power management technology: SpeedShift (aka. SST, aka. HWP).
-
-With HWP enabled, the CPU handles pstate management by itself instead of requiring the OS to do it. The CPU itself will automatically shift to higher and lower pstates depending on CPU demand.
-
-In order to use HWP, use an SMBIOS that is enabled for HWP... currently MacBook9,1, MacBookPro13,x (and now MacBookPro14,x, MacBookPro15,x). Also, since HWP tends to cause the xcpm_idle to be invoked, make sure the xcpm_idle patch (courtesy of PikeRAlpha) is enabled. It is default in all current plists provided by my Clover laptop guide. If you're using older than current plists, you may have to copy the patch into your config.plist/KernelAndKextPatches/KernelToPatch section.
-
-You can also enable HWP for other SMBIOS by creating a patched resources injector for X86PlatformPlugin.kext (or by patching the kext itself). But that is a subject for another day.
-
-Note: You still need SSDT.aml from ssdtPRgen.sh or SSDT-XCPM.aml as discussed earlier.
-
-#### How to fully enable HWP
-
-1、 config.plist/CPU/HWPEnable = Yes
-
-2、 `plugin-type` must in ACPI table, use `SSDT-pr.aml` to fully enable AGPM(AppleGraphicPowerManagement) and X86PlatformPlugin.
-
-3、 add `xcpm_idle` to `config.plist/KernalAndKextPatches/KernelToPatch`
-
-```
-<key>KernelToPatch</key>
-<array>
-        <dict>
-                <key>Comment</key>
-                <string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-                <key>Disabled</key>
-                <false/>
-                <key>Find</key>
-                <data>
-                ILniAAAADzA=
-                </data>
-                <key>MatchOS</key>
-                <string>10.12</string>
-                <key>Replace</key>
-                <data>
-                ILniAAAAkJA=
-                </data>
-        </dict>
-</array>
-```
-
-4、 config `X86PlatformPluginInjector` (optional)
-
-#### The function of kexts
-
-```
-1, ACPIBatteryManager.kext 
-电源管理，配合dsdt使用。
-2, BrcmFirmwareData.kext和BrcmPatchRAM2.kext和AirportBrcmFixup.kext
-Broadcom BCM94352Z 无线网卡和蓝牙驱动，/Library/Extensions也需有一份。
-3, AppleALC.kext
+1, AirportBrcmFixup.kext
+修复Airport
+2, AppleALC.kext
 声卡驱动。
-4, AppleIGB.kext和RealtekRTL8111.kext
-有线网卡驱动。
-5, CPUFriend.kext和CPUFriendDataProvider.kext
-动态修改X86PlatformPlugin，注入电源管理数据。
-6, FakeSMC.kext和Fake_*.kext
-FakeSMC.kext用来欺骗OSX系统要安装的PC是SMC硬件。
-7, GenericUSBXHCI.kext
-USB3.0驱动，可以删除，在10.11就没用了。
-8, HibernationFixup.kext
+3, BrcmFirmwareData.kext和BrcmPatchRAM3.kext和BrcmBluetoothInjector.kext
+Broadcom BCM94352Z 蓝牙驱动。
+4, HibernationFixup.kext
 修复睡眠唤醒问题，也可以不用。
-9, Lilu.kext
+5, Lilu.kext
 核心依赖。
-10, USBPorts.kext
+6, NoTouchID.kext
+避免登录页面卡顿。
+7, RealtekRTL8111.kext
+有线网卡驱动。
+8, SMCBatteryManager.kext和SMC*.kext
+电源管理驱动和传感器驱动。
+9, USBPorts.kext
 USB驱动。
+10, VirtualSMC.kext
+用来欺骗OSX系统要安装的PC是SMC硬件。
 11, VoodooPS2Controller.kext
 触摸板驱动。
 12, WhateverGreen.kext
-核心依赖
+核心依赖，显卡驱动。
 ```
 
 
