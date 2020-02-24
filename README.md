@@ -13,7 +13,7 @@ Hackintosh your Thinkpad E480
 | 内存     | 16GB 金士顿 DDR4 2400MHz            |
 | 硬盘     | 东芝(TOSHIBA) 240GB                  |
 | 集成显卡 | 英特尔 UHD 图形620                     |
-| 声卡     | Conexant CX20753/4 (节点:14)          |
+| 声卡     | Conexant CX20753/4 (节点:15)          |
 | 网卡     | BCM94352Z                            |
 
 ## 目前情况
@@ -70,10 +70,13 @@ Broadcom BCM94352Z 蓝牙驱动。
 USB驱动。
 10, VirtualSMC.kext
 用来欺骗OSX系统要安装的PC是SMC硬件。
-11, VoodooPS2Controller.kext
+11, VoodooPS2Controller.kext和VoodooInput.kext
 触摸板驱动。
 12, WhateverGreen.kext
 核心依赖，显卡驱动。
 ```
 
+## 鸣谢
+
+感谢 [SukkaW](https://github.com/SukkaW) 指出AppleALC和VoodooPS2的完善建议[issues11](https://github.com/aliyoge/Hackintosh-ThinkPad-E480/issues/11)。
 
