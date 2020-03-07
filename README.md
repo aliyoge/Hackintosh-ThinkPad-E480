@@ -37,15 +37,21 @@ Hackintosh your Thinkpad E480
 
 #### 关于DSDT
 
-最好不要直接使用我的`DSDT`文件，请导出你自己的`DSDT`，然后打上一下补丁:
+~~最好不要直接使用我的`DSDT`文件，请导出你自己的`DSDT`，然后打上一下补丁:~~
 
-* [电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)
-* [关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)
-* [睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)
+~~* [电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)~~
+~~* [关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)~~
+~~* [睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)~~
+
+不再使用`DSDT`文件，全部改用`SSDT` 热补丁和 `ACPI Patch` 这样`EFI`基本上可以通用了。感谢 [SukkaW](https://github.com/SukkaW)
+
+
 
 #### 已知问题
 
-* 在睡眠唤醒之后可能会存在插拔电源后电量不更新问题，临时解决办法是再手动将系统睡眠一下，唤醒后会恢复正常，此问题正在想办法解决，有知道怎么解决这个问题的朋友麻烦告知一下。
+~~* 在睡眠唤醒之后可能会存在插拔电源后电量不更新问题，临时解决办法是再手动将系统睡眠一下，唤醒后会恢复正常，此问题正在想办法解决，有知道怎么解决这个问题的朋友麻烦告知一下。~~
+
+去掉`ACPI`里的`NormalizeHeaders`这个`Quirks`后，冒事修复了，还要再继续观望一下。 
 
 #### 各种驱动作用
 
