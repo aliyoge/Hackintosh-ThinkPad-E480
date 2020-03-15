@@ -39,9 +39,11 @@ Hackintosh your Thinkpad E480
 
 ~~最好不要直接使用我的`DSDT`文件，请导出你自己的`DSDT`，然后打上一下补丁:~~
 
-~~* [电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)~~
-~~* [关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)~~
-~~* [睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)~~
+~~[电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)~~
+
+~~[关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)~~
+
+~~[睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)~~
 
 不再使用`DSDT`文件，全部改用`SSDT` 热补丁和 `ACPI Patch` 这样`EFI`基本上可以通用了。感谢 [SukkaW](https://github.com/SukkaW)
 
