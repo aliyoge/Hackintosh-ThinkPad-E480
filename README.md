@@ -16,9 +16,16 @@ Hackintosh your Thinkpad E480
 | 声卡     | Conexant CX20753/4 (节点:15)          |
 | 网卡     | BCM94352Z                            |
 
+## 更新
+
+### 2020-09-04
+
+* 更新OpenCore到0.6.0
+* 更新部分驱动
+
 ## 目前情况
 
-* 目前支持最新版本10.15.3。
+* 目前支持最新版本10.15.6。
 * 与时俱进，采用OC引导。
 * Cpu驱动加载正常，变频正常。
 * 电量显示正常。
@@ -37,8 +44,6 @@ Hackintosh your Thinkpad E480
 
 #### 关于DSDT
 
-~~最好不要直接使用我的`DSDT`文件，请导出你自己的`DSDT`，然后打上一下补丁:~~
-
 ~~[电量补丁](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/battery/battery_Lenovo-X230i.txt)~~
 
 ~~[关机变重启](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/system/system_Shutdown_restart.txt)~~
@@ -46,8 +51,6 @@ Hackintosh your Thinkpad E480
 ~~[睡眠秒唤醒](https://github.com/RehabMan/Laptop-DSDT-Patch/blob/master/usb/usb_prw_0x6d_xhc.txt)~~
 
 不再使用`DSDT`文件，全部改用`SSDT` 热补丁和 `ACPI Patch` 这样`EFI`基本上可以通用了。感谢 [SukkaW](https://github.com/SukkaW)
-
-
 
 #### 已知问题
 
