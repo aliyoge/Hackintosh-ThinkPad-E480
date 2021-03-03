@@ -1,4 +1,4 @@
-# Thinkpad E480 for macOS Catalina
+# Thinkpad E480 for macOS Big Sur & Catalina
 
 Hackintosh your Thinkpad E480
 
@@ -10,14 +10,18 @@ Hackintosh your Thinkpad E480
 | -------- | ------------------------------------|
 | 电脑型号 | 联想ThinkPad 翼480（0UCD）             |
 | 处理器   | 英特尔 酷睿 i5-8250U 处理器             |
-| 内存     | 16GB 金士顿 DDR4 2400MHz            |
-| 硬盘     | 东芝(TOSHIBA) 240GB                  |
+| 内存     | 32GB 金士顿 DDR4 2400MHz            |
+| 硬盘     | 东芝(TOSHIBA) 512GB                  |
 | 集成显卡 | 英特尔 UHD 图形620                     |
 | 声卡     | Conexant CX20753/4 (节点:15)          |
 | 网卡     | BCM94352Z                            |
 
 ## 更新
+### 2021-03-03
 
+* 更新OpenCore到0.6.6
+* DSDT替换成SukkaW版本
+* 更新驱动
 ### 2020-09-04
 
 * 更新OpenCore到0.6.0
