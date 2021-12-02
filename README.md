@@ -1,4 +1,4 @@
-# Thinkpad E480 for macOS Big Sur & Catalina
+# Thinkpad E480 for Monterey
 
 Hackintosh your Thinkpad E480
 
@@ -17,6 +17,12 @@ Hackintosh your Thinkpad E480
 | 网卡     | BCM94352Z                            |
 
 ## 更新
+
+### 2021-12-02
+
+* 更新支持Monterey
+* 更新OpenCore到0.7.5
+* 更新驱动
 ### 2021-03-03
 
 * 更新OpenCore到0.6.6
